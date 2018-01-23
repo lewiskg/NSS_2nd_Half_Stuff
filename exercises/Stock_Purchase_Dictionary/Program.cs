@@ -54,8 +54,8 @@ namespace Stock_Purchase_Dictionary
                     if (totalPurchaseInfo.ContainsKey(companyName) == false)
                     {
                         totalPurchaseInfo.Add(companyName, (double) purchase.Item2 * purchase.Item3);
-
-                    } else if (totalPurchaseInfo.ContainsKey(companyName) == true)
+                    } 
+                    else if (totalPurchaseInfo.ContainsKey(companyName) == true)
                     {
                         totalPurchaseInfo[companyName] += (double) purchase.Item2 * purchase.Item3;
                     }
@@ -69,7 +69,6 @@ namespace Stock_Purchase_Dictionary
                 Console.WriteLine("--------------------------------");
                 foreach (var i in totalPurchaseInfo)
                 {
-                    // Console.WriteLine("{0} \t {1:C}", i.Key, i.Value);
                     Console.WriteLine(String.Format("{0,-17} | {1,12:C}", i.Key, i.Value));
                 }
                 Console.WriteLine("--------------------------------\n");

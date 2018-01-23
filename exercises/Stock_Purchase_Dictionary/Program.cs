@@ -16,7 +16,7 @@ namespace Stock_Purchase_Dictionary
         {
             Dictionary<string, double> totalPurchaseInfo = new Dictionary<string, double>();
 
-            public Dictionary<string, string> stocks = new Dictionary<string, string>()
+            Dictionary<string, string> stocks = new Dictionary<string, string>()
             {
                 {"GM", "General Motors"},
                 {"GE", "General Electric"},
@@ -29,7 +29,7 @@ namespace Stock_Purchase_Dictionary
                 {"APPL", "Apple"}
             };
 
-            public List<Tuple<string, int, double>> purchases = new List<Tuple<string, int, double>>()
+            List<Tuple<string, int, double>> purchases = new List<Tuple<string, int, double>>()
             {
                 Tuple.Create("GM", 150, 23.21),
                 Tuple.Create("GE", 32, 17.87),

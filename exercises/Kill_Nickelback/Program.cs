@@ -8,9 +8,30 @@ namespace Kill_Nickelback
     {
         static void Main(string[] args)
         {
-            List<Song> goodSongs = new List<Song>();
+            Jukebox player = new Jukebox();
 
-            List<Song> allSongs = new List<Song>()
+            player.printAllSongList();
+            player.addToGoodSongs();
+            player.printGoodSongList();
+        }
+    }
+
+    class Song
+    {
+        public string Name { get; set;}
+        public string Artist { get; set;}
+
+        public void printSong()
+        {
+            Console.WriteLine("{0}: {1}", Name, Artist);
+        }
+    }
+
+    class Jukebox
+    {
+        public List<Song> goodSongs = new List<Song>();
+
+        public List<Song> allSongs = new List<Song>()
             {
                 new Song(){Name = "Nickleback", Artist = "Photograph"},
                 new Song(){Name = "Nickleback", Artist = "How You Remind Me"},
@@ -24,6 +45,8 @@ namespace Kill_Nickelback
                 new Song(){Name = "Taylor Swift", Artist = "...Ready For It?"}
             };
 
+        public void addToGoodSongs()
+        {
             foreach (Song song in allSongs)
             {
                 if (song.Name != "Nickleback")
@@ -31,23 +54,25 @@ namespace Kill_Nickelback
                     goodSongs.Add(song);
                 }
             }
+        }
 
+        public void printGoodSongList()
+        {
+            Console.WriteLine("\nGood songs in jukebox:");
             foreach (Song song in goodSongs)
             {
                 song.printSong();
             }
-
         }
-    }
 
-    class Song
-    {
-        public string Name { get; set;}
-        public string Artist { get; set;}
-
-        public void printSong()
+        public void printAllSongList()
         {
-            Console.WriteLine("{0}: {1}", Name, Artist);
+            Console.WriteLine("\nAll songs in jukebox:");
+            foreach (Song song in allSongs)
+            {
+                song.printSong();
+            }
         }
+
     }
 }

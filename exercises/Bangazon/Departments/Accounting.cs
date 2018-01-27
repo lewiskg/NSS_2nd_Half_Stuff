@@ -33,6 +33,11 @@ namespace Bangazon.Departments
             Console.WriteLine("-----------------------------------------------------------------\n");
         }
 
+        public override void SetBudget(double budget)
+        {
+            this.Budget += budget;
+            Console.WriteLine($"{this.GetType().Name} spends {this.Budget/4:C} per quarter, {this.Budget:C} per year.");
+        }
 
         // Overriding the default toString() method for each object instance
         public override string ToString() => $"{this.Name} {this.Supervisor}  {this.Employee_count} {this.Company}";

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Bangazon.Departments;
+using Bangazon.Employees;
 
 namespace Bangazon
 {
@@ -8,6 +9,7 @@ namespace Bangazon
     {
         static void Main(string[] args)
         {
+            const double baseBudget = 75000.00;
 
             // Create some instances
             HumanResources hr01 = new HumanResources("HR 1", "Toby Flenderson", 2, "Dunder Mifflin");
@@ -35,8 +37,8 @@ namespace Bangazon
             ac01.AddBudget("Oscar Gutierrez", 4858502);
             ac01.AddBudget("Angela Martin", 101254871);
             ac01.printBudgetStats();
-            
 
+            
             // Add derived departments to the list
             List<Department> departmentsList = new List<Department>();
             departmentsList.Add(hr01);
@@ -44,12 +46,40 @@ namespace Bangazon
             departmentsList.Add(ac01);
             departmentsList.Add(sa01);
             
-            
-            Console.WriteLine("ToString() method on each list object:");
             foreach(Department d in departmentsList)
+            {
+                d.SetBudget(baseBudget);
+            }
+
+            Console.WriteLine("\nToString() method on each list object:");
+            foreach (Department d in departmentsList)
             {
                 Console.WriteLine($"{d.ToString()}");
             }
+
+            Employee E01 = new Employee("Ken", "Lewis");
+            Console.WriteLine("\n");
+            E01.printEmployee();
+            Console.WriteLine("\n");
+
+                HumanResourcesEmployee E02 = new HumanResourcesEmployee("Ted", "Nugent", "fT", 24.50);
+            E02.printEmployee();   
+            Console.WriteLine("\n");
+            HumanResourcesEmployee E03 = new HumanResourcesEmployee();
+            E03.printEmployee(); 
+
+                SalesEmployee E04 = new SalesEmployee("Teddy", "Nugenty", "pt", 24.50);
+            E04.printEmployee();   
+            Console.WriteLine("\n");
+            SalesEmployee E05 = new SalesEmployee();
+            E05.printEmployee();  
+
+                AccountingEmployee E06 = new AccountingEmployee("Teddyyy", "Nugent", "FT", 2400.50);
+            E06.printEmployee();   
+            Console.WriteLine("\n");
+            AccountingEmployee E07 = new AccountingEmployee();
+            E07.printEmployee();    
+
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Bangazon.Employees;
 
 namespace Bangazon.Departments
 {
     // Parent class for all departments
-    public class Department
+    public class Department : Employee
     {
         // Fields
         private string _dept_name;
@@ -12,6 +13,9 @@ namespace Bangazon.Departments
         private int _employee_count;
         private string _company;
         private double _budget;
+        private List<string> _employee = new List<string>();
+
+
 
         // Properties
         public string Name { get => _dept_name; set => _dept_name = value; }
@@ -19,6 +23,9 @@ namespace Bangazon.Departments
         public int Employee_count { get => _employee_count; set => _employee_count = value; }
         public string Company { get => _company; set => _company = value; }
         public double Budget { get => _budget; set => _budget = value; }
+        public List<string> EMployee { get => _employee; }
+
+
 
         // Constructor methods
         public Department() => Console.WriteLine("Department default class constructor called. - 1");
@@ -47,6 +54,23 @@ namespace Bangazon.Departments
         {
             Budget = budget;
             Console.WriteLine($"The budget for the {this.GetType().Name} department is {this.Budget:C}");
+        }
+
+
+        public void AddEmployee(Employee employee)
+        {
+            this.FirstName = employee.FirstName;
+            this.LastName = employee.LastName;
+            string firstAndLastName = FirstName + " " + LastName;
+            this.EMployee.Add(firstAndLastName);
+        }
+
+        public virtual void printEmployeeList()
+        {
+            foreach ( var emp in EMployee )
+            {
+                Console.WriteLine($"Employee name: {emp}");
+            }
         }
     }
 }

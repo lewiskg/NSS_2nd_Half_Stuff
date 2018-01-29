@@ -57,28 +57,70 @@ namespace Bangazon
                 Console.WriteLine($"{d.ToString()}");
             }
 
-            Employee E01 = new Employee("Ken", "Lewis");
-            Console.WriteLine("\n");
-            E01.printEmployee();
-            Console.WriteLine("\n");
+            // Employee E01 = new Employee("Ken", "Lewis");
+            // Console.WriteLine("\n");
+            // E01.printEmployee();
+            // Console.WriteLine("\n");
 
-                HumanResourcesEmployee E02 = new HumanResourcesEmployee("Ted", "Nugent", "fT", 24.50);
-            E02.printEmployee();   
-            Console.WriteLine("\n");
-            HumanResourcesEmployee E03 = new HumanResourcesEmployee();
-            E03.printEmployee(); 
+            // Console.WriteLine("\n------------------------------------");
+            // Console.WriteLine("\n------------------------------------");
 
-                SalesEmployee E04 = new SalesEmployee("Teddy", "Nugenty", "pt", 24.50);
-            E04.printEmployee();   
-            Console.WriteLine("\n");
-            SalesEmployee E05 = new SalesEmployee();
-            E05.printEmployee();  
+            // HumanResourcesEmployee E02 = new HumanResourcesEmployee("Ted", "Nugent", "fT", 24.50);
 
-                AccountingEmployee E06 = new AccountingEmployee("Teddyyy", "Nugent", "FT", 2400.50);
-            E06.printEmployee();   
-            Console.WriteLine("\n");
-            AccountingEmployee E07 = new AccountingEmployee();
-            E07.printEmployee();    
+            // E02.printEmployee();   
+            // Console.WriteLine("\n");
+            // HumanResourcesEmployee E03 = new HumanResourcesEmployee();
+            // E03.printEmployee(); 
+            
+            // Console.WriteLine("\n------------------------------------");
+            // Console.WriteLine("\n------------------------------------");
+
+            // SalesEmployee E04 = new SalesEmployee("Teddy", "Nugenty", "pt", 24.50);
+            // E04.printEmployee();   
+            // Console.WriteLine("\n");
+            // SalesEmployee E05 = new SalesEmployee();
+            // E05.printEmployee();  
+
+            // Console.WriteLine("\n------------------------------------");
+            // Console.WriteLine("\n------------------------------------");
+
+            // AccountingEmployee E06 = new AccountingEmployee("Teddyyy", "Nugent", "FT", 2400.50);
+            // E06.printEmployee();   
+            // Console.WriteLine("\n");
+            // AccountingEmployee E07 = new AccountingEmployee();
+            // E07.printEmployee();
+
+            Console.WriteLine("\n------------------------------------");
+            Console.WriteLine("------------------------------------");
+
+            Employee hre01 = new Employee("Ted", "Nugent");
+            Employee hre02 = new Employee("Eddy", "Van Halen");
+            Employee hre03 = new Employee("Alice", "Cooper");
+
+            Employee sae01 = new Employee("Johnny", "Appleseed");
+            Employee sae02 = new Employee("Jack", "Ripper");
+            Employee sae03 = new Employee("George", "Washington");
+
+            Employee ace01 = new Employee("Theodore", "huxtable");
+            Employee ace02 = new Employee("Peter", "Griffin");
+            Employee ace03 = new Employee("Glen", "Quigmire");
+
+            hr01.AddEmployee(hre01);
+            hr01.AddEmployee(hre02);
+            hr01.AddEmployee(hre03);
+            
+            sa01.AddEmployee(sae01);
+            sa01.AddEmployee(sae02);
+            sa01.AddEmployee(sae03);
+            
+            ac01.AddEmployee(ace01);
+            ac01.AddEmployee(ace02);
+            ac01.AddEmployee(ace03);
+            
+
+            hr01.printEmployeeList();
+            sa01.printEmployeeList();
+            ac01.printEmployeeList();
 
         }
     }

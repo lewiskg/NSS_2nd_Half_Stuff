@@ -9,6 +9,7 @@ namespace Bangazon.Employees
         private double _salary;
         private double _hourlyRate;
 
+
         // Property
         public double Salary { get => _salary; set => _salary = value; }
         
@@ -28,7 +29,6 @@ namespace Bangazon.Employees
                 }
             }
         }
-
 
         // Constructor
         public HumanResourcesEmployee() : base()
@@ -56,6 +56,7 @@ namespace Bangazon.Employees
         {
             this.FirstName = firstName;
             this.LastName = lastName;
+
             if (Convert.ToBoolean(String.Compare(jobStatus, "FT", true)))
             {
                 this.Salary = pay;
@@ -74,6 +75,12 @@ namespace Bangazon.Employees
             {
                 Console.WriteLine($"HR employee name: {this.FirstName} {this.LastName} | Hourly rate: {(this.HourlyRate):C}");
             }
+        }
+
+        public void printDeptEmployeeList()
+        {
+            Console.WriteLine("Department:  Human Resources");
+            printDeptEmployeeList();
         }
 
     }

@@ -20,13 +20,14 @@ namespace Bangazon.Employees
         {  
             FirstName = firstName;
             LastName = lastName;
-        }
+         }
 
         // Method
         public virtual void printEmployee()
         {
             Console.WriteLine($"Employee name: {this.FirstName} {this.LastName}");
         }
+
     }
 
 }

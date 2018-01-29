@@ -39,6 +39,17 @@ namespace Bangazon.Departments
             Console.WriteLine($"The budget for the {this.GetType().Name} department is {this.Budget:C} per year, {budget/4:C} per quarter.");
         }
 
+        public override void printEmployeeList()
+        {
+            Console.WriteLine("Sales Department Employee List:");
+            Console.WriteLine("-----------------------------------------------------------------");
+            foreach ( var emp in EMployee )
+            {
+                Console.WriteLine($"{emp}");
+            }
+            Console.WriteLine("-----------------------------------------------------------------\n");
+        }
+
         // Overriding the default toString() method for each object instance
         public override string ToString() => $"{this.Name} {this.Supervisor}  {this.Employee_count} {this.Company}";
     }

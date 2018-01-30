@@ -5,39 +5,78 @@ namespace SOLID_Vehicles.Vehicles
 {
     public class Groundcraft : IVehicle
     {
-        public int Wheels { get; set; } = 2;
-        public int Doors { get; set; } = 0;
-        public int PassengerCapacity { get; set; }
-        public bool Winged { get; set; } = false;
-        public string TransmissionType { get; set; } = "Manual";
-        public double EngineVolume { get; set; } = 1.3;
-        public double MaxWaterSpeed { get; set; }
-        public double MaxLandSpeed { get; set; } = 160.4;
-        public double MaxAirSpeed { get; set; }
+        // Field
+        private string _name;
+        private int _wheels;
+        private int _doors;
+        private int _capacity;
+        private bool _winged;
+        private string _transmission;
+        private double _engineVolume;
+        private double _maxWaterSpeed;
+        private double _maxLandSpeed;
+        private double _maxAirSpeed;
+        private bool _vehicleOn = false;
+
+        // Properties
+        public string Name { get => _name; set => _name = value; } //2
+        public int Wheels { get => _wheels; set => _wheels = value; }  //0
+        public int Doors { get => _doors; set => _doors = value; }
+        public int PassengerCapacity { get => _capacity; set => _capacity = value; }
+        public bool Winged { get => _winged; set => _winged = value; } //false
+        public string TransmissionType { get => _transmission; set => _transmission = value; }  //"Manual"
+        public double EngineVolume { get => _engineVolume; set => _engineVolume = value; } //1.3
+        public double MaxWaterSpeed { get => _maxWaterSpeed; set => _maxWaterSpeed = value; }  
+        public double MaxLandSpeed { get => _maxLandSpeed; set => _maxLandSpeed = value; }  //160.4
+        public double MaxAirSpeed { get => _maxAirSpeed; set => _maxAirSpeed = value; }
+
 
         public void Drive()
         {
-            Console.WriteLine("The motorcycle screams down the highway");
+            if (_vehicleOn == false)
+            {
+                Console.WriteLine($"The {Name} must be started before it can be driven.");
+            }
+            else
+            {
+                Console.WriteLine($"The {Name} roars down the highway.");
+            }
         }
 
         public void Fly()
         {
-            throw new NotImplementedException();
+            Vehicle.NotImplementedException();
         }
 
         public void Start()
         {
-            throw new NotImplementedException();
+            _vehicleOn = true;
+            Console.WriteLine($"The {Name} has been started.");
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            _vehicleOn = false;
+            Console.WriteLine($"The {Name} has been turned off.");
         }
-        // Constructor
-        public Groundcraft ( string name, int wheels, int numDoors, int passengerCapacity, bool winged, string transType, double engVol, double maxAirSpeed)
-        {
 
+        // Constructor
+        public Groundcraft ( string name, int wheels, int numDoors, int passengerCapacity, bool winged, string transType, double engVol, double maxLandSpeed)
+        {
+            Name = name;
+            Wheels = wheels;
+            Doors = numDoors;
+            PassengerCapacity = passengerCapacity;
+            Winged = winged;
+            TransmissionType = transType;
+            EngineVolume = engVol;
+            MaxLandSpeed =  maxLandSpeed;
+        }
+        // Method
+        public override string ToString()
+        {
+            string vehicleDetails = $"Name: {Name}, Num of wheels: {Wheels}, Num of doors: {Doors}, Passenger capacity: {PassengerCapacity}, Winged: {Winged}, Transmission type: {TransmissionType}, Engine volume [L]: {EngineVolume}, Max land speed [miles/hr]: {MaxLandSpeed}";
+            return vehicleDetails;
         }
 
     }

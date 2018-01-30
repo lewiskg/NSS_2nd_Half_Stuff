@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SOLID_Vehicles.Vehicles
 {
-    public class Automobile : IVehicle
+    public class Groundcraft : IVehicle
     {
         public int Wheels { get; set; } = 2;
         public int Doors { get; set; } = 0;
@@ -34,5 +34,11 @@ namespace SOLID_Vehicles.Vehicles
         {
             throw new NotImplementedException();
         }
+        // Constructor
+        public Groundcraft ( string name, int wheels, int numDoors, int passengerCapacity, bool winged, string transType, double engVol, double maxAirSpeed)
+        {
+
+        }
+
     }
 }

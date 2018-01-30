@@ -5,20 +5,19 @@ namespace SOLID_Vehicles.Vehicles
 {
     public interface IVehicle
     {
-        public int Wheels { get; set; }
-        public int Doors { get; set; }
-        public int PassengerCapacity { get; set; }
-        public bool Winged { get; set; }
-        public string TransmissionType { get; set; }
-        public double EngineVolume { get; set; }
-        public double MaxWaterSpeed { get; set; }
-        public double MaxLandSpeed { get; set; }
-        public double MaxAirSpeed { get; set; }
+        int Wheels { get; set; }
+        int Doors { get; set; }
+        int PassengerCapacity { get; set; }
+        bool Winged { get; set; }
+        string TransmissionType { get; set; }
+        double EngineVolume { get; set; }
+        double MaxWaterSpeed { get; set; }
+        double MaxLandSpeed { get; set; }
+        double MaxAirSpeed { get; set; }
 
-        public void Drive();
-        public void Fly();
-        public void Start();
-        public void Stop();
-
+        void Drive();
+        void Fly();
+        void Start();
+        void Stop();
     }
 }

@@ -34,5 +34,11 @@ namespace SOLID_Vehicles.Vehicles
         {
             throw new NotImplementedException();
         }
+        // Constructor
+        public Watercraft ( string name, int wheels, int numDoors, int passengerCapacity, string transType, double engVol, double maxWaterSpeed)
+        {
+
+        }
+
     }
 }

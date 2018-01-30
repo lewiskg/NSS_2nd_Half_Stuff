@@ -1,7 +1,6 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
-using Bangazon.Employees;
-
 
 namespace LINQ_Join
 {
@@ -45,12 +44,17 @@ namespace LINQ_Join
                 new Customer(){ Name="Sid Brown", Balance=49582.68, Bank="CITI"}
             };
 
-            var millionaireReport = ...
+            var millionaireReport = from m in customers
+                                    where m.Balance > 1E6
+                                    select new {m.Name, m.Bank};
 
+            Console.WriteLine("\nMillionaires & their bank:");
+            Console.WriteLine("---------------------------");
             foreach (var customer in millionaireReport)
             {
                 Console.WriteLine($"{customer.Name} at {customer.Bank}");
             }
+            Console.WriteLine("\n");
         }
     }
 }

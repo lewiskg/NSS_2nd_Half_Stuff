@@ -1,0 +1,89 @@
+input checking
+negative numbers
+decimal numbers
+alpha characters
+
+
+10^0 = 1 => I,II,III,IV,V,VI,VII,VIII,IX
+       5 => V
+10^1 = 10 => X,XI,XII.XIII,XIV,XV,XVI,XVII,XVIII,XIX,XX,XXI,XXII,XXIII,XXIV,XXV,XXVI,XXVII,XXVIII,XXIX,XXX,....XLIX,L,LI,LII,LIII
+       50 => L
+10^2 = 100 => C
+       500 => D
+10^3 = 1,000 => M
+       5,000 => 
+10^4 = 10,000
+10^5 = 100,000
+10^6 = 1,000,000
+....
+
+
+get string numbers
+convert to character array
+get length of character array
+array length => powers of ten - 1
+
+case: ones (1)
+is num == 1 => I
+is num == 5 => V
+is num == 4 => IV
+is num == 6 => VI
+is num == 9 => IX
+is num == 0 =>'' - nothing
+is num == [2,3,7,8] => [II,III,VII,VIII]
+[I,II,III,IV,V,VI,VII,VIII,IX]
+
+case: tens (2)
+is num == 1 => X
+is num == 5 => L
+is num == 4 => XL
+is num == 6 => LX
+is num == 9 => XC
+is num == 0 =>'' - nothing
+is num == [2,3,7,8] => [XX,XXX,LXX,LXXX]
+[X,XX,XXX,XL,L,LX,LXX,LXXX,XC]
+
+case: hundreds (3)
+is num == 1 => C
+is num == 5 => D
+is num == 4 => CD
+is num == 6 => DC
+is num == 9 => CM
+is num == 0 =>'' - nothing
+is num == [2,3,7,8] => [CC,CCC,DCC,DCCC]
+[C,CC,CCC,CD,D,DC,DCC,DCCC,CM]
+
+case: thousands (4)
+is num == 1 => M
+is num == 5 => (V)
+is num == 4 => M(V)
+is num == 6 => (V)M
+is num == 9 => M(X)
+is num == 0 =>'' - nothing
+is num == [2,3,7,8] => [MM,MMM,(V)MM,(V)MMM]
+[M,MM,MMM,M(V),(V),(V)M,(V)MM,(V)MMM,M(X)]
+
+
+
+case: tenThousands (5)
+is num == 1 => (X)
+is num == 5 => (L)
+is num == 4 => (X)(L)
+is num == 6 => (L)(X)
+is num == 9 => (X)(C)
+is num == 0 =>'' - nothing
+is num == [2,3,7,8] => [(X)(X),(X)(X)(X),(L)(X)(X),(L)(X)(X)(X)]
+[(X),(X)(X),(X)(X)(X),(X)(L),(L),(L)(X),(L)(X)(X),(L)(X)(X)(X),(X)(C)]
+
+
+
+case: hundredThousands (6)
+is num == 1 => (C)
+is num == 5 => (D)
+is num == 4 => (C)(D)
+is num == 6 => (D)(C)
+is num == 9 => (C)(M)
+is num == 0 =>'' - nothing
+is num == [2,3,7,8] => [(C)(C),(C)(C)(C),(D)(C)(C),(D)(C)(C)(C)]
+[(C),(C)(C),(C)(C)(C),(C)(D),(D),(D)(C),(D)(C)(C),(D)(C)(C)(C),(C)(M)]
+

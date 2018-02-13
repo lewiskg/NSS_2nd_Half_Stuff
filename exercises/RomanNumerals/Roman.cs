@@ -11,21 +11,21 @@ namespace RomanNumerals
             int[] numArray = BreakUpNum(snumber);
             Array.Reverse(numArray);
             int numLength = snumber.ToString().Length;
-            
-            string[] romanNumsOnes = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
-            string[] romanNumsTens = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
-            string[] romanNumsHundreds = {"C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
-            string[] romanNumsThousands = {"M", "MM", "MMM", "M(V)", "(V)", "(V)M", "(V)MM", "(V)MMM", "M(X)"};
-            string[] romanNumsTenThousands = {"(X)", "(X)(X)", "(X)(X)(X)", "(X)(L)", "(L)", "(L)(X)", "(L)(X)(X)", "(L)(X)(X)(X)", "(X)(C)"};
-            string[] romanNumsHundredThousands = {"(C)", "(C)(C)", "(C)(C)(C)", "(C)(D)", "(D)", "(D)(C)", "(D)(C)(C)", "(D)(C)(C)(C)", "(C)(M)"};
+
+            string[] romanNumsOnes = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+            string[] romanNumsTens = { "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" };
+            string[] romanNumsHundreds = { "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };
+            string[] romanNumsThousands = { "M", "MM", "MMM", "M(V)", "(V)", "(V)M", "(V)MM", "(V)MMM", "M(X)" };
+            string[] romanNumsTenThousands = { "(X)", "(X)(X)", "(X)(X)(X)", "(X)(L)", "(L)", "(L)(X)", "(L)(X)(X)", "(L)(X)(X)(X)", "(X)(C)" };
+            string[] romanNumsHundredThousands = { "(C)", "(C)(C)", "(C)(C)(C)", "(C)(D)", "(D)", "(D)(C)", "(D)(C)(C)", "(D)(C)(C)(C)", "(C)(M)" };
 
             List<string> romanNumeral = new List<string>();
-            int value;
             int index = numLength;
-            
+            int value = 0;
+
             while (index > 0)
             {
-                value = numArray[index  - 1];
+                value = numArray[index - 1];
                 switch (index)
                 {
                     case 1:  // ones place

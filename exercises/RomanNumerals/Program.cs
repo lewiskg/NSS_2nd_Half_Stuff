@@ -6,7 +6,8 @@ namespace RomanNumerals
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("**** Number to Roman Numeral Convertion Program ****");
+            string RomanLetters = "I V X L C D M";
+            Console.WriteLine("**** Arabic Number to Roman Numeral or Roman Numeral to Arabic Number Convertion Program ****");
             Console.WriteLine("--- Enter '0' to end program.\n");
 
             int status = 1;
@@ -17,16 +18,16 @@ namespace RomanNumerals
 
                 try
                 {
-                    if (Convert.ToInt32(snum) > 0)
+                    if (Char.IsLetter(snum, 0) && RomanLetters.Contains(Convert.ToString(snum[0])))
+                    {
+                        string arabicNum = Arabic.RomanToArabic(snum);
+                        Console.WriteLine($"{snum} = {arabicNum}");
+                    }
+                    else //if (Convert.ToInt32(snum) > 0)
                     {
                         string romanNum = Roman.NumToRoman(snum);
                         Console.WriteLine($"{snum} = {romanNum}");
                     } 
-                    else 
-                    {
-                        status = 0;
-                        Console.WriteLine("Exiting Program.\n");
-                    }
                 }
                 catch (Exception e)
                 {

@@ -29,8 +29,11 @@ namespace RomanNumerals
                         { 
                             status = 0;
                         }
-                        string romanNum = Roman.NumToRoman(snum);
-                        Console.WriteLine($"{snum} = {romanNum}");
+                        else
+                        {
+                            string romanNum = Roman.NumToRoman(snum);
+                            Console.WriteLine($"{snum} = {romanNum}");  
+                        }
                     } 
                 }
                 catch (Exception e)

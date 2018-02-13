@@ -25,6 +25,10 @@ namespace RomanNumerals
                     }
                     else //if (Convert.ToInt32(snum) > 0)
                     {
+                        if (Convert.ToInt32(snum) == 0) 
+                        { 
+                            status = 0;
+                        }
                         string romanNum = Roman.NumToRoman(snum);
                         Console.WriteLine($"{snum} = {romanNum}");
                     } 

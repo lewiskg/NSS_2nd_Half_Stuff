@@ -11,11 +11,6 @@ namespace RomanNumerals
             int[] numArray = BreakUpNum(snumber);
             Array.Reverse(numArray);
             int numLength = snumber.ToString().Length;
-
-            foreach(int n in numArray)
-            {
-                Console.WriteLine(n);
-            }
             
             string[] romanNumsOnes = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
             string[] romanNumsTens = {"X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
@@ -31,7 +26,6 @@ namespace RomanNumerals
             while (index > 0)
             {
                 value = numArray[index  - 1];
-                Console.WriteLine($"{index},{value}");
                 switch (index)
                 {
                     case 1:  // ones place
@@ -71,7 +65,7 @@ namespace RomanNumerals
                         }
                         break;
                     default:
-                        break;
+                        return "Number entered is > 1E6.";
                 }
                 index--;
             }
